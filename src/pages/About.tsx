@@ -382,7 +382,7 @@ const milestones = [
 ]
 
 const leadershipTeam = [
-  { img: '/HOO.jpeg', name: 'Pugal', role: 'Head of Operations', gradientStart: '#0071E3', gradientEnd: '#00C6FF', bio: 'Visionary leader driving operational excellence and digital transformation with over a decade of experience in enterprise technology and process optimization.', linkedin: 'https://www.linkedin.com/in/techiepugal/' },
+  { img: '/Pugal.jpeg', name: 'Pugal', role: 'Head of Operations', gradientStart: '#0071E3', gradientEnd: '#00C6FF', bio: 'Visionary leader driving operational excellence and digital transformation with over a decade of experience in enterprise technology and process optimization.', linkedin: 'https://www.linkedin.com/in/techiepugal/' },
   { img: '/HOB.jpeg', name: 'Dharanish', role: 'Head of Business', gradientStart: '#FF9500', gradientEnd: '#FFB347', bio: 'Strategic business leader focused on growth, client partnerships, and delivering value-driven solutions that align technology with business goals globally.', linkedin: 'https://www.linkedin.com/in/dharanish-azhagesan-859797253/' },
 ]
 
