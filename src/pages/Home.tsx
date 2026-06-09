@@ -331,8 +331,8 @@ const clientLogos = [
   { src: '/S.jpeg',       alt: 'Siruvani – enterprise software client',    name: 'Siruvani'      },
 ];
 
-// Logo paths that need increased size to match others
-const logosNeedingSizeBoost = ['/SL.jpeg', '/S.jpeg'];
+// Only SL.jpeg needs a size boost to match the others; Siruvani (/S.jpeg) will use the default 60px (same as MK)
+const logosNeedingSizeBoost = ['/SL.jpeg'];
 
 /* ═══════════════════════════════════════════════
    HOME PAGE
@@ -749,7 +749,7 @@ export default function Home() {
               `}</style>
               <div className="logo-track">
                 {[...clientLogos, ...clientLogos].map((logo, idx) => {
-                  // Check if this logo needs a size boost to match others
+                  // Only SL.jpeg gets the size boost; Siruvani (/S.jpeg) uses default 60px
                   const needsSizeBoost = logosNeedingSizeBoost.includes(logo.src);
                   return (
                     <div key={idx} className="logo-item">
