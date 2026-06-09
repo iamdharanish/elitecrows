@@ -327,10 +327,12 @@ const clientLogos = [
   { src: '/smw.webp',     alt: 'SMW client logo – digital transformation',        name: 'SMW'     },
   { src: '/stslogo.png',  alt: 'STS logo – strategic technology alliance',        name: 'STS'     },
   { src: '/Twinkle.png',  alt: 'Twinkle logo – innovative solutions partner',     name: 'Twinkle' },
-  { src: '/SL.jpeg',       alt: 'Sovereign Luxora – enterprise software client',    name: 'Dubai'      },
-   { src: '/S.jpeg',       alt: 'Siruvani – enterprise software client',    name: 'Siruvani'      },
-  
+  { src: '/SL.jpeg',      alt: 'Sovereign Luxora – enterprise software client',    name: 'Dubai'      },
+  { src: '/S.jpeg',       alt: 'Siruvani – enterprise software client',    name: 'Siruvani'      },
 ];
+
+// Logo paths that need increased size to match others
+const logosNeedingSizeBoost = ['/SL.jpeg', '/S.jpeg'];
 
 /* ═══════════════════════════════════════════════
    HOME PAGE
@@ -746,18 +748,28 @@ export default function Home() {
                 }
               `}</style>
               <div className="logo-track">
-                {[...clientLogos, ...clientLogos].map((logo, idx) => (
-                  <div key={idx} className="logo-item">
-                    <img
-                      src={logo.src}
-                      alt={logo.alt}
-                      title={logo.name}
-                      loading="lazy"
-                      style={{ height: '60px', width: 'auto', maxWidth: '160px', objectFit: 'contain', filter: darkMode ? 'brightness(0) invert(1)' : 'none' }}
-                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                    />
-                  </div>
-                ))}
+                {[...clientLogos, ...clientLogos].map((logo, idx) => {
+                  // Check if this logo needs a size boost to match others
+                  const needsSizeBoost = logosNeedingSizeBoost.includes(logo.src);
+                  return (
+                    <div key={idx} className="logo-item">
+                      <img
+                        src={logo.src}
+                        alt={logo.alt}
+                        title={logo.name}
+                        loading="lazy"
+                        style={{
+                          height: needsSizeBoost ? '70px' : '60px',
+                          width: 'auto',
+                          maxWidth: '160px',
+                          objectFit: 'contain',
+                          filter: darkMode ? 'brightness(0) invert(1)' : 'none'
+                        }}
+                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
