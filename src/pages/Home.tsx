@@ -327,6 +327,8 @@ const clientLogos = [
   { src: '/smw.webp',     alt: 'SMW client logo – digital transformation',        name: 'SMW'     },
   { src: '/stslogo.png',  alt: 'STS logo – strategic technology alliance',        name: 'STS'     },
   { src: '/Twinkle.png',  alt: 'Twinkle logo – innovative solutions partner',     name: 'Twinkle' },
+  { src: '/SL.jpeg',       alt: 'MK partner logo – enterprise software client',    name: 'MK'      },
+  
 ];
 
 /* ═══════════════════════════════════════════════
