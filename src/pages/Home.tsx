@@ -303,7 +303,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                 style={{
-                  fontSize: 'clamp(44px, 6vw, 80px)',
+                  fontSize: 'clamp(44px, 6vw, 64px)', // 🔽 Desktop font size reduced from 80px to 64px
                   fontWeight: 900,
                   letterSpacing: '-0.03em',
                   lineHeight: 1.1,
