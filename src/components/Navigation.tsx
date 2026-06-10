@@ -94,7 +94,6 @@ export default function Navigation() {
         transition: 'all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1)',
         display: 'flex',
         justifyContent: 'center',
-        // FIX: only apply pointerEvents none to the nav wrapper, not the overlay
         pointerEvents: 'none',
       }}
     >
@@ -116,7 +115,7 @@ export default function Navigation() {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
-          {/* Logo - only the icon, no text */}
+          {/* Logo - only the icon, no text, raw image (filter removed) */}
           <Link
             to="/"
             style={{
@@ -141,7 +140,7 @@ export default function Navigation() {
               <img
                 src="/ECL.png"
                 alt="EliteCrows logo"
-                style={{ height: '22px', filter: 'brightness(0) invert(1)' }}
+                style={{ height: '22px' }}
                 onError={(e) => (e.currentTarget.style.display = 'none')}
               />
             </div>
@@ -271,7 +270,6 @@ export default function Navigation() {
               zIndex: 1001,
               maxHeight: 'calc(100vh - 100px)',
               overflowY: 'auto',
-              // FIX: ensure the overlay itself always captures pointer events
               pointerEvents: 'auto',
             }}
           >
@@ -287,7 +285,6 @@ export default function Navigation() {
                   >
                     <Link
                       to={link.path}
-                      // FIX: close menu on tap so the overlay never blocks the destination page
                       onClick={handleMobileLinkClick}
                       style={{
                         padding: '14px 18px',
@@ -301,7 +298,6 @@ export default function Navigation() {
                         minHeight: '52px',
                         display: 'flex',
                         alignItems: 'center',
-                        // FIX: remove iOS tap delay and highlight flash
                         WebkitTapHighlightColor: 'transparent',
                         touchAction: 'manipulation',
                       }}
