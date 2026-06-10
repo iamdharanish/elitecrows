@@ -78,10 +78,12 @@ export default function Navigation() {
     return () => document.removeEventListener('keydown', handleEsc)
   }, [mobileOpen])
 
-  // FIX: close menu immediately, then let React Router navigate
   const handleMobileLinkClick = () => {
     setMobileOpen(false)
   }
+
+  // Yellow color for Crows and Infotech
+  const yellow = '#FFC107'
 
   return (
     <nav
@@ -115,22 +117,23 @@ export default function Navigation() {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
-          {/* Logo - only the icon, no text, raw image (filter removed) */}
+          {/* Logo with black background */}
           <Link
             to="/"
             style={{
               textDecoration: 'none',
               display: 'flex',
               alignItems: 'center',
+              gap: '10px',
               minHeight: '44px',
             }}
           >
+            {/* Black background wrapper for logo */}
             <div
               style={{
-                width: '34px',
-                height: '34px',
-                background: 'linear-gradient(135deg, #0066FF 0%, #7C3AED 100%)',
+                background: '#000000',
                 borderRadius: '10px',
+                padding: '4px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -138,11 +141,38 @@ export default function Navigation() {
               }}
             >
               <img
-                src="/ECL.png"
+                src="/eclogo.png"
                 alt="EliteCrows logo"
-                style={{ height: '22px' }}
+                style={{
+                  height: '26px',
+                  width: 'auto',
+                  display: 'block',
+                }}
                 onError={(e) => (e.currentTarget.style.display = 'none')}
               />
+            </div>
+            <div>
+              <div
+                style={{
+                  fontSize: 'clamp(14px, 4vw, 16px)',
+                  fontWeight: 800,
+                  color: cssVars.textPrimary,
+                  lineHeight: 1.1,
+                  letterSpacing: '-0.02em',
+                }}
+              >
+                ELITE<span style={{ color: yellow }}> CROWS</span>
+              </div>
+              <div
+                style={{
+                  fontSize: 'clamp(8px, 2.5vw, 10px)',
+                  color: yellow, // changed to yellow
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Infotech
+              </div>
             </div>
           </Link>
 
@@ -308,7 +338,6 @@ export default function Navigation() {
                 )
               })}
 
-              {/* Get Started CTA */}
               <motion.div
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
