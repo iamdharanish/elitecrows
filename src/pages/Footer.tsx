@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom'
 import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react'
 
 export default function Footer() {
+  const yellow = '#FFC107'   // Consistent yellow from navigation
+  const accentBlue = '#0071E3'
+
   return (
     <footer style={{
       background: '#F5F5F7',
@@ -10,22 +13,43 @@ export default function Footer() {
       <div className="container" style={{ padding: '64px 24px 32px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px', marginBottom: '48px' }}>
 
-          {/* Brand */}
+          {/* Brand – matches Navigation logo style */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
+              {/* Black background wrapper for logo (identical to nav) */}
               <div style={{
-                width: '32px', height: '32px',
-                background: '#0071E3',
-                borderRadius: '8px',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                background: '#000000',
+                borderRadius: '10px',
+                padding: '4px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '32px',
+                height: '32px',
               }}>
-                <img src="/eclogo.png" alt="EC" style={{ height: '20px', filter: 'brightness(0) invert(1)' }} />
+                <img 
+                  src="/eclogo.png" 
+                  alt="EliteCrows logo" 
+                  style={{ height: '20px', width: 'auto', display: 'block' }}
+                  onError={(e) => (e.currentTarget.style.display = 'none')}
+                />
               </div>
               <div>
-                <div style={{ fontSize: '15px', fontWeight: 700, color: '#1D1D1F', lineHeight: 1.1 }}>
-                  Elite<span style={{ color: '#0071E3' }}>Crows</span>
+                <div style={{
+                  fontSize: '15px',
+                  fontWeight: 800,
+                  color: '#1D1D1F',
+                  lineHeight: 1.1,
+                  letterSpacing: '-0.02em',
+                }}>
+                  ELITE<span style={{ color: yellow }}> CROWS</span>
                 </div>
-                <div style={{ fontSize: '10px', color: '#86868B', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                <div style={{
+                  fontSize: '10px',
+                  color: yellow,                         // Changed from gray to yellow
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                }}>
                   Infotech
                 </div>
               </div>
@@ -35,9 +59,9 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Services */}
+          {/* Services (unchanged, uses accent blue for headings) */}
           <div>
-            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#0071E3', marginBottom: '16px' }}>
+            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: accentBlue, marginBottom: '16px' }}>
               Services
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -54,7 +78,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#0071E3', marginBottom: '16px' }}>
+            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: accentBlue, marginBottom: '16px' }}>
               Company
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -64,7 +88,7 @@ export default function Footer() {
                   fontSize: '13px', color: '#86868B', textDecoration: 'none',
                   transition: 'color 0.15s',
                 }}
-                  onMouseEnter={e => (e.currentTarget.style.color = '#0071E3')}
+                  onMouseEnter={e => (e.currentTarget.style.color = accentBlue)}
                   onMouseLeave={e => (e.currentTarget.style.color = '#86868B')}
                 >
                   {label}
@@ -76,7 +100,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#0071E3', marginBottom: '16px' }}>
+            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: accentBlue, marginBottom: '16px' }}>
               Contact
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -107,7 +131,7 @@ export default function Footer() {
           </span>
           <span style={{ fontSize: '12px', color: '#A1A1A6' }}>
             Designed & Developed by{' '}
-            <span style={{ color: '#0071E3', fontWeight: 600 }}>EliteCrows</span>
+            <span style={{ color: yellow, fontWeight: 600 }}>EliteCrows</span>   {/* Changed from blue to yellow */}
           </span>
         </div>
       </div>
