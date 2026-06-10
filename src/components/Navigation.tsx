@@ -116,14 +116,13 @@ export default function Navigation() {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
-          {/* Logo */}
+          {/* Logo - only the icon, no text */}
           <Link
             to="/"
             style={{
               textDecoration: 'none',
               display: 'flex',
               alignItems: 'center',
-              gap: '10px',
               minHeight: '44px',
             }}
           >
@@ -140,34 +139,11 @@ export default function Navigation() {
               }}
             >
               <img
-                src="/eclogo.png"
+                src="/ECL.png"
                 alt="EliteCrows logo"
                 style={{ height: '22px', filter: 'brightness(0) invert(1)' }}
                 onError={(e) => (e.currentTarget.style.display = 'none')}
               />
-            </div>
-            <div>
-              <div
-                style={{
-                  fontSize: 'clamp(14px, 4vw, 16px)',
-                  fontWeight: 800,
-                  color: cssVars.textPrimary,
-                  lineHeight: 1.1,
-                  letterSpacing: '-0.02em',
-                }}
-              >
-                Elite<span style={{ color: cssVars.accent }}>Crows</span>
-              </div>
-              <div
-                style={{
-                  fontSize: 'clamp(8px, 2.5vw, 10px)',
-                  color: cssVars.textSecondary,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                Infotech
-              </div>
             </div>
           </Link>
 
